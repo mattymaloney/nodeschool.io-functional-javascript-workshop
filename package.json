@@ -1,0 +1,24 @@
+{
+  "name": "functional-javascipt-workshop",
+  "version": "1.0.0",
+  "description": "nodeschool.io functional javascript workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattymaloney/nodeschool.io-functional-javascript-workshop.git"
+  },
+  "keywords": [
+    "node",
+    "nodeschool",
+    "functional-javascript"
+  ],
+  "author": "mattymaloney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattymaloney/nodeschool.io-functional-javascript-workshop/issues"
+  },
+  "homepage": "https://github.com/mattymaloney/nodeschool.io-functional-javascript-workshop"
+}
