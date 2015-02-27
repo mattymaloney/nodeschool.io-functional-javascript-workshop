@@ -13,6 +13,18 @@ var scripts = {
       { message: "asdf asdf" },
       { message: "zxcv zxcv" }
     ]))
+  },
+  '06': function basicReduce () {
+    var countWords = require("./06-basic-reduce");
+    var inputWords = ['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian'];
+    console.log(countWords(inputWords));
+
+    // =>
+    // {
+    //   Apple: 2,
+    //   Banana: 1,
+    //   Durian: 3
+    // }
   }
 }
 
