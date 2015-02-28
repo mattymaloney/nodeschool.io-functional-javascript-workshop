@@ -87,6 +87,18 @@ var scripts = {
       console.log('done!');
     });
     console.log('this should print during the repeat cycle');
+  },
+  '15': function asyncLoops () {
+    var loadUsers = require('./15-async-loops');
+    function load (userId, callback) {
+      callback({
+        id: userId
+      });
+    }
+    function loadedAllUsers (allUsers) {
+      console.log('loaded all users.', allUsers);
+    }
+    loadUsers([1,2,3,4,5], load, loadedAllUsers);
   }
 };
 
