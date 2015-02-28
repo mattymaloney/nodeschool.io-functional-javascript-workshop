@@ -25,6 +25,15 @@ var scripts = {
     //   Banana: 1,
     //   Durian: 3
     // }
+  },
+  '07': function basicRecursion () {
+    var reduce = require('./07-basic-recursion');
+    var inputArray = [1, 2, 3, 2, 1, 2];
+    var func = function (wordCounts, word) {
+      wordCounts[word] = (wordCounts[word] || 0) + 1;
+      return wordCounts;
+    };
+    console.log(reduce(inputArray, func, {}));
   }
 }
 
