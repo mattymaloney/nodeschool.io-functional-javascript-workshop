@@ -1,3 +1,6 @@
+/*jslint node:true plusplus:true  white:true */
+'use strict';
+
 var scripts = {
   '03': function basicMap () {
     var test = require("./03-basic-map");
@@ -12,7 +15,7 @@ var scripts = {
       { message: "qwre qwer" },
       { message: "asdf asdf" },
       { message: "zxcv zxcv" }
-    ]))
+    ]));
   },
   '06': function basicReduce () {
     var countWords = require("./06-basic-reduce");
@@ -41,7 +44,14 @@ var scripts = {
     var logBatman = logger('Batman:');
     logMusic('mo mo mo');
     logBatman('shwackk!', 'bblammmm!');
+  },
+  '10': function partialWithBind () {
+    var logger = require('./10-partial-with-bind');
+    var logMusic = logger('Music:', 'who let them dogs out');
+    var logBatman = logger('Batman:', 'holy arguments batman!');
+    logMusic('mo mo mo');
+    logBatman('shwackk!', 'bblammmm!');
   }
-}
+};
 
 scripts[process.argv[2]]();
