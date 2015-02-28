@@ -59,6 +59,14 @@ var scripts = {
       return item * 2
     })
     console.log(output) // => [2,4,6,8,10]
+  },
+  '12': function functionSpy () {
+    var Spy = require('./12-function-spy');
+    var spy = Spy(console, 'error')
+    console.error('calling console.error')
+    console.error('calling console.error')
+    console.error('calling console.error')
+    console.log(spy.count) // 3
   }
 };
 
