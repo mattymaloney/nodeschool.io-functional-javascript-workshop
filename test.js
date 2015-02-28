@@ -51,6 +51,14 @@ var scripts = {
     var logBatman = logger('Batman:', 'holy arguments batman!');
     logMusic('mo mo mo');
     logBatman('shwackk!', 'bblammmm!');
+  },
+  '11': function mapViaReduce () {
+    var map = require('./11-map-via-reduce');
+    var nums = [1,2,3,4,5]
+    var output = map(nums, function double(item) {
+      return item * 2
+    })
+    console.log(output) // => [2,4,6,8,10]
   }
 };
 
