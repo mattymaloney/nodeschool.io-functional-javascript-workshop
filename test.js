@@ -34,9 +34,14 @@ var scripts = {
       return wordCounts;
     };
     console.log(reduce(inputArray, func, {}));
+  },
+  '09': function partialWoBind () {
+    var logger = require('./09-partial-wo-bind');
+    var logMusic = logger('Music:');
+    var logBatman = logger('Batman:');
+    logMusic('mo mo mo');
+    logBatman('shwackk!', 'bblammmm!');
   }
 }
 
-
 scripts[process.argv[2]]();
-
