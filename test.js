@@ -77,6 +77,16 @@ var scripts = {
       console.log('done!');
     });
     console.log('this should print during the repeat cycle');
+  },
+  '14': function trampoline () {
+    var repeat = require('./14-trampoline');
+    var count = 0;
+    repeat(function () {
+      console.log('repeating...', ++count);
+    }, 5, function () {
+      console.log('done!');
+    });
+    console.log('this should print during the repeat cycle');
   }
 };
 
