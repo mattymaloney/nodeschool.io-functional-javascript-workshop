@@ -67,6 +67,16 @@ var scripts = {
     console.error('calling console.error')
     console.error('calling console.error')
     console.log(spy.count) // 3
+  },
+  '13': function nonBlockingEventLoop () {
+    var repeat = require('./13-blocking-event-loop');
+    var count = 0;
+    repeat(function () {
+      console.log('repeating...', ++count);
+    }, 5, function () {
+      console.log('done!');
+    });
+    console.log('this should print during the repeat cycle');
   }
 };
 
