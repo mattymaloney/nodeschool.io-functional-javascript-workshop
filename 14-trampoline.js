@@ -14,6 +14,8 @@
  * work for repeating functions that return functions rather than scalar
  * values.
  *
+ * http://stackoverflow.com/questions/25228871/how-to-understand-trampoline-in-javascript
+ *
  */
 
 function repeat(operation, num, callback) {
