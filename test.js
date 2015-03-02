@@ -54,19 +54,19 @@ var scripts = {
   },
   '11': function mapViaReduce () {
     var map = require('./11-map-via-reduce');
-    var nums = [1,2,3,4,5]
+    var nums = [1,2,3,4,5];
     var output = map(nums, function double(item) {
-      return item * 2
-    })
-    console.log(output) // => [2,4,6,8,10]
+      return item * 2;
+    });
+    console.log(output); // => [2,4,6,8,10]
   },
   '12': function functionSpy () {
     var Spy = require('./12-function-spy');
-    var spy = Spy(console, 'error')
-    console.error('calling console.error')
-    console.error('calling console.error')
-    console.error('calling console.error')
-    console.log(spy.count) // 3
+    var spy = Spy(console, 'error');
+    console.error('calling console.error');
+    console.error('calling console.error');
+    console.error('calling console.error');
+    console.log(spy.count); // 3
   },
   '13': function nonBlockingEventLoop () {
     var repeat = require('./13-blocking-event-loop');
@@ -118,10 +118,36 @@ var scripts = {
           "version": "1.2.6"
         }
       }
-    }
+    };
     console.log(getDependencies(loremIpsum));
     // => [ 'inflection@1.2.6', 'optimist@0.3.7', 'wordwrap@0.0.2' ]
+  },
+  '17': function curry () {
+    var curryN = require('./17-curry');
+    function add3(one, two, three) {
+      return one + two + three;
+    }
+
+    var curryC = curryN(add3);
+    var curryB = curryC(1);
+    var curryA = curryB(2);
+    console.log(curryA(3)); // => 6
+
+    var curryA2 = curryB(7);
+    console.log(curryA2(9)); // => 17
+    
+    console.log(curryA(10)); // => 13
+
+    console.log(curryN(add3)(1)(2)(3)); // => 6
+    
+    function strConcat(){
+      var args = Array.prototype.slice.call(arguments);
+      return Array.prototype.concat.apply([], args).join(" ");
+    }
+    console.log(curryN(strConcat, 5)('This')('problem')('has')('been')('solved'));
+    // => This problem has been solved
   }
 };
 
-scripts[process.argv[2]]();
+scripts['17']();
+//scripts[process.argv[2]]();
