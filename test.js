@@ -1,4 +1,4 @@
-/*jslint node:true plusplus:true  white:true */
+/*jslint node:true plusplus:true  white:true vars:true */
 'use strict';
 
 var scripts = {
@@ -146,8 +146,13 @@ var scripts = {
     }
     console.log(curryN(strConcat, 5)('This')('problem')('has')('been')('solved'));
     // => This problem has been solved
+  },
+  '18': function functionCall () {
+    var slice = require('./18-function-call');
+    var nums = [1,2,3,4,5];
+    console.log(slice(nums, 1, 3));
   }
 };
 
-scripts['17']();
-//scripts[process.argv[2]]();
+//scripts['17']();
+scripts[process.argv[2]]();
